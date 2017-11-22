@@ -10,9 +10,13 @@ fi
 echo "
 	Compiling Vim 8.0 with python 2.7 support"
 echo "---------------------------------------------"
-echo "Removing default install of Vim
+
+if ! rpm -qa | grep -Eqw 'vim-common|vim-enhanced'
+then
+	echo "Removing default install of Vim
 "
-sudo dnf remove vim-common vim-enhanced
+	sudo dnf remove vim-common vim-enhanced
+fi	
 
 echo "
 Cloning Vim 8.0 repo in the local Projects directory.
