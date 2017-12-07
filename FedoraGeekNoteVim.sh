@@ -62,6 +62,11 @@ cd vimrc
 cp -r vim ~/.vim
 cp vimrc ~/.vimrc
 cd ..
+rm -r $HOME/.vim/bundle/{nerdtree,vim-geeknote}
+cd $HOME/.vim/bundle
+git clone git@github.com:neilagabriel/vim-geeknote.git
+git clone git@github.com:scrooloose/nerdtree.git
+cd $HOME
 echo "Vim config files copied to your home directory.
 "
 sleep 3
